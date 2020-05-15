@@ -114,7 +114,7 @@ class Trainer(threading.Thread):
 
     def training(self, train_pct, output_path, output_scaler_path, model_name, properties):
         K.clear_session()
-        self.graph = tf.get_default_graph()
+        self.graph = tf.compat.v1.get_default_graph()
         with self.graph.as_default():
             self.model_name = model_name
             df = pd.read_csv(self.fname)

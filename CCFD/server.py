@@ -74,7 +74,7 @@ class ThreadedServer(socketserver.ThreadingTCPServer):
     '''
     def __init__(self, listen_addr):
         socketserver.ThreadingTCPServer.__init__(self, listen_addr, MyTcpHandler)
-        self.graph = tf.get_default_graph()
+        self.graph = tf.compat.v1.get_default_graph()
         self.model = []
         self.model_names = []
         self.scaler = []
